@@ -1,0 +1,139 @@
+
+
+{% include 'Service/Base.html' %}
+
+{% block content %}
+{% include 'Service/user.html' %}
+{% block main %}
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+<style>
+.center {
+    margin: auto;
+    height: 924px;
+    width: 60%;
+    margin-top: 102px;
+<!--    border: 3px solid #73AD21;-->
+    padding: 10px;
+}
+.Links {
+    font-size: 30px;
+    color: white;
+    margin-left: 1269px;
+    margin-top: -95px;
+    text-decoration: none;
+}
+.innerbox {
+    margin: auto;
+    margin-left: 403px;
+    margin-top: -441px;
+    height: 789px;
+    width: 55%;
+<!--    border: 3px solid #73AD21;-->
+    padding: 10px;
+}
+.leftinnerbox {
+    margin: auto;
+    margin-left: 63px;
+    margin-top: 29px;
+    height: 421px;
+    width: 24%;
+<!--    border: 3px solid #73AD21;-->
+    padding: 10px;
+}
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #3d3b40;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type=password], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #3d3b40;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+img {
+    left: 75px;
+    width: 235px;
+    padding: 40p x;
+    height: 217px;
+    border-radius: 11%;
+    /* border-color: black; */
+    border: 20px solid transparent;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #3d3b40;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+input[type=submit]:hover {
+  color:black;
+  background-color: white;
+}
+</style>
+</head>
+<body>
+
+
+<div class="center">
+  <h1> MY PROFILE</h1>
+ <div class="leftinnerbox">
+      <img src="{% static 'images/form-img.jpg' %}" alt="Trulli">
+  <form action="/action_page.php">
+  <label for="img">Change Profile:</label>
+  <input type="file" id="img" name="img" accept="image/*">
+  <input type="submit" value="BROWSE">
+</form>
+
+ </div>
+ <div class="innerbox">
+        <form action="/action_page.php" target="_blank" method="post">
+          <label for="fname">First Name:</label>
+          <input type="text" id="fname" name="fname" value="John"><br>
+          <label for="lname">Last Name:</label>
+          <input type="text" id="lname" name="lname" value="Doe"><br><br>
+
+           <label for="fname">Email:</label>
+          <input type="text" id="fname" name="fname" value="John"><br>
+          <label for="fname">Phone NO:</label>
+          <input type="text" id="fname" name="fname" value="John"><br>
+         <label for="pwd">Existing Password:</label>
+          <input type="password" id="pwd" name="pwd" minlength="8"><br><br>
+
+         <label for="pwd"> New Password:</label>
+           <input type="password" id="pwd" name="pwd" minlength="8"><br><br>
+
+         <label for="pwd">Confirm Password:</label>
+           <input type="password" id="pwd" name="pwd" minlength="8"><br><br>
+
+         <input type="submit" value="Update">
+        </form>
+  </div>
+</div>
+
+</body>
+</html>
+
+{% endblock main %}
+
+{% endblock content %}
+
+ {% block buttons %}
+
+   <a href="{% url 'Home' %}"><button class="button1 button1" align>Logout</button></a>
+{% endblock buttons %}

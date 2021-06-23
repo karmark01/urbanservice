@@ -1,0 +1,395 @@
+
+.head{
+  background-color: #3d3b40;
+   padding: 20px;
+    height: 45px;
+
+}
+
+.Cname {
+    font-size: 71px;
+  margin-left: 89px;
+    margin-top: -18px;
+    color: white;
+}
+.Links {
+    font-size: 30px;
+    color: white;
+    margin-left: 1131px;
+    margin-top: -95px;
+    text-decoration: none;
+}
+
+
+.anchor {
+    font-size: 28px;
+    text-decoration: none;
+    color: white;
+}
+
+#ptag
+{
+position:absolute;
+ top:240px;
+ left:300px;
+ font-size:25px;
+ color:#026466;
+}
+
+.Name{
+     margin: 0;
+     margin-left: 4em;
+     padding:6px;
+     color: white;
+     font-size:60px;
+
+}
+
+.ab{
+position:absolute;
+color:#026466;
+font-size:40px;
+left:300px;
+top:160px;
+}
+.cd{
+position:absolute;
+color:#026466;
+text-align:center;
+font-size:30px;
+top:500px;
+left:780px;
+}
+
+
+#----------------line------
+<!--hr{-->
+<!--position:absolute;-->
+<!--top:600px;-->
+<!--width:20px;-->
+<!--}-->
+
+
+
+<!--#navbar {-->
+<!--  overflow: hidden;-->
+<!--  padding: 10px 0px;-->
+<!--  transition: 0.4s;-->
+<!--  position: fixed;-->
+<!--  width: 100%;-->
+<!--  top: 0;-->
+<!--  z-index: 99;-->
+<!--}-->
+
+.vl {
+    border-left: 1px solid white;
+    height: 34px;
+    margin-top: -65px;
+    margin-left: 427px;
+}
+
+#--------Buttons-------------
+
+.button1:hover {
+  background-color: white;
+  color: black;
+}
+
+.button2 {
+  background-color: #3f3d41;
+  color: white;
+  border: 2px solid #008CBA;
+}
+
+.button2:hover {
+}
+
+.button1 {
+  background-color: #3f3d41; /* Green */
+  border-radius: 22px;
+  border: none;
+  color: white;
+  padding: 20px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 2px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+    top: 17px;
+  right: 30px;
+  position: absolute;
+}
+
+.button2 {
+  background-color: #3f3d41;; /* Green */
+  border-radius: 22px;
+  border: none;
+  color: white;
+  padding: 20px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  top: 17px;
+    right: 188px;   
+  position: absolute;
+}
+body{
+min-height:100vh;
+height:100px;
+background-image:g url( 'https://images.pexels.com/photos/167976/pexels-photo-167976.jpeg?cs=srgb&dl=pexels-christopher-nowarra-167976.jpg&fm=jpg')
+background-position:center;
+background-size: cover;
+position: relative;
+
+}
+
+
+element.style {
+}
+  .search {
+
+    background: white;
+
+    width: 459px;
+    height: 48px;
+
+      margin: -351px -28em 76em 52em;
+     border-style: solid;
+    border-radius: 117px;
+}
+
+
+#inputinbox {
+    width: 406px;
+    height: 47px;
+    margin: 164px -455px 85px 48px;
+    size: 144px;
+    text-decoration: none;
+    outline: none;
+   /* border-radius: 221px; */
+    font-size: 20px;
+}
+
+.servicebox {
+    width: 1355px;
+    height: 290px;
+    background: white;
+    position: absolute;
+    border-style: solid;
+    margin: -1057px -23em 76em 17em;
+}
+
+
+
+
+
+/* Float four columns side by side */
+.column {
+    float: left;
+    position: relative;
+    width: 16%;
+    column-gap: 38px;
+    padding: 0px -28px;
+}
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+/* Style the counter cards */
+.card {
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+ padding: 9px 61px -10px;
+    text-align: center;
+    margin: 8px;
+    /* position: relative; */
+    /* margin-top: 15px; */
+    /* margin-left: 93px; */
+    left: -44px;
+    top: -47px;
+    border-style: ridge;
+    /* border: 2px solid #026466; */
+    border-radius: 13px;
+    background-color: #ffffff;
+}
+
+
+.card:hover {
+  box-shadow: 0 30px 26px 0 rgba(0,0,0,0.2);
+}
+
+
+
+
+
+
+
+
+/*--------------------------search box    --------------------------*/
+
+
+
+/* {
+  box-sizing: border-box;
+}
+
+body {
+  font: 16px Arial;
+}
+
+/*the container must be positioned relative:*/
+.autocomplete {
+  position: relative;
+  display: inline-block;
+}
+
+.homeinput {
+  border: 1px solid transparent;
+  background-color: #f1f1f1;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.homeinput[type=text] {
+    background-color: #ffffff;
+    width: 134%;
+    height: 28px;
+    margin-top: -12px;
+    margin-left: -127px;
+}
+
+
+.autocomplete-items {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  /*position the autocomplete items to be the same width as the container:*/
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+
+.autocomplete-items div {
+    padding: 10px;
+    cursor: pointer;
+    margin-left: -128px;
+    width: 404px;
+    background-color: #fff;
+    border-bottom: 1px solid #d4d4d4;
+}
+
+/*when hovering an item:*/
+.autocomplete-items div:hover {
+  background-color: #e9e9e9;
+}
+
+/*when navigating through the items using the arrow keys:*/
+.autocomplete-active {
+  background-color: DodgerBlue !important;
+  color: #ffffff;
+}
+
+.searchsubmit {
+    background-color: #80807e;
+    color: #fff;
+    cursor: pointer;
+    width: 126px;
+        margin-top: -12px;
+    height: 52px;
+}
+
+
+
+
+/*-----------------for select country------------------*/
+
+
+
+/*the container must be positioned relative:*/
+.custom-select {
+    position: relative;
+    font-family: Arial;
+    margin-left: -328px;
+    top: 38px;
+}
+.custom-select select {
+  display: none; /*hide original SELECT element:*/
+}
+
+.select-selected {
+    background-color: white;
+    height: 32px;
+    /* shape-outside: margin-box; */
+    margin-right: 22px;
+}
+
+
+/*style the arrow inside the select element:*/
+.select-selected:after {
+    position: absolute;
+    content: "";
+    top: 14px;
+    right: 39px;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-color: #454344 #3e393900 transparent transparent;
+}
+
+/*point the arrow upwards when the select box is open (active):*/
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
+
+/*style the items (options), including the selected item:*/
+.select-items div, .select-selected {
+    color: #171414;
+    padding: 8px 16px;
+    border: 1px solid transparent;
+    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+    cursor: pointer;
+        width: 163px;
+    user-select: none;
+}
+
+/*style items (options):*/
+.select-items {
+  position: absolute;
+  background-color:white;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+/*hide the items when the select box is closed:*/
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover, .same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+}

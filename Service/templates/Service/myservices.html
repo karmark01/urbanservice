@@ -1,0 +1,100 @@
+{% extends 'Service/Base.html' %}
+{% load static %}
+
+{% block link %}
+<link rel="stylesheet" href="{% static 'css/showservices.css' %}">
+<link rel="stylesheet" href="{% static 'css/home.css' %}"
+      <style>
+
+</style>
+{% endblock link %}
+{% block content %}
+  <style>
+   .myserviceheading {
+    text-align: center;
+    margin-top: -68px;
+    font-size: 41px;
+    color: white;
+}
+
+</style>
+
+<img src="{% static 'images/img.png' %}" alt="Girl in a jacket" width="1890" height="100">
+<h1 class="myserviceheading"> My Services </h1>
+
+
+
+        <div class="showServicerrow">
+
+
+            <div class="showServicercolumn" >
+                <div class="showServicercard" >
+
+                    <h3>Haircut for 2- Boys</h3>
+
+                    <p>Rs. 500</p>
+                    <p>Time 60 min</p>
+                         <p class="verticalline"></p>
+                    <p> * Comfortable  and child-freindly Service</p>
+                    <p>* Men's Haircut </p>
+
+
+                  <button class="showbutton" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Cancel</button>
+                    <button class="showbutton" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Payment</button>
+
+                </div>
+            </div>
+
+
+
+
+
+            <div class="showServicercolumn" >
+                <div class="showServicercard" >
+
+                    <h3>Haircut for 2- Boys</h3>
+
+                    <p>Rs. 500</p>
+                    <p>Time 60 min</p>
+                         <p class="verticalline"></p>
+                    <p> * Comfortable  and child-freindly Service</p>
+                    <p>* Men's Haircut </p>
+
+
+                <button class="showbutton" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Sign Up</button>
+
+
+
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+{% endblock content %}
+
+{% block buttons %}
+<a href="Login">
+
+</a>
+
+<a href="register">
+
+</a>
+
+{% endblock buttons %}
+
+

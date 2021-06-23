@@ -1,0 +1,196 @@
+{% extends 'Service/Base.html' %}
+{% load static %}
+
+{% block link %}
+<link rel="stylesheet" href="{% static 'css/showservices.css' %}">
+<link rel="stylesheet" href="{% static 'css/home.css' %}"
+      {% endblock link %}
+
+      {% block content %}
+
+<img src="{% static 'images/img.png' %}" alt="Girl in a jacket" width="1890" height="300">
+<h1 class="serviceheading"> {{category}} in khargone</h1>
+
+
+<div class="showServicerrow">
+    {% if request.session.customerid %}
+    {% for service in type %}
+    <form action="{% url 'bookmyservice' service.sid %}" method="post">
+        {% csrf_token %}
+        <div class="showServicercolumn">
+            <div class="showServicercard">
+
+                <h3>{{service.heading}}</h3>
+
+                <p>Rs:{{service.fees}}</p>
+                <p>Time 60 min</p>
+                <p class="verticalline"></p>
+                <p> {{service.description}}</p>
+
+                <button class="showbutton"
+                        style="width:auto;">Book
+
+                </button>
+            </div>
+        </div>
+    </form>
+    {% endfor %}
+
+    {% else %}
+
+    {% for service in type %}
+    <div class="showServicercolumn">
+        <div class="showServicercard">
+
+            <h3>{{service.heading}}</h3>
+
+            <p>₹:{{service.fees}}</p>
+            <p>Time 60 min</p>
+            <p class="verticalline"></p>
+            <p> {{service.description}}</p>
+
+            <button class="showbutton" onclick="document.getElementById('id01').style.display='block'"
+                    style="width:auto;">Sign Up
+            </button>
+        </div>
+    </div>
+    {% endfor %}
+    {% endif %}
+</div>
+
+
+<div id="id01" class="modal">
+    <span onclick="document.getElementById('id01').style.display='none'" class="close"
+          title="Close Modal">&times;</span>
+
+    <div class="container" id="container">
+        <div class="form-container sign-up-container">
+            <form class="forms" method="post" action="{% url 'register' 1 %}">
+                {% csrf_token %}
+                <h1 class="showcreateA">Create Account</h1>
+                <div class="social-container">
+                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <span>or use your email for registration</span>
+
+                <input type="text" name="first_name" placeholder="First Name"/>
+                <input type="text" name="last_name" placeholder="Last Name"/>
+                <input type="email" name="email" placeholder="Email"/>
+                <input type="password" name="Pass" placeholder="Password"/>
+                <input type="text" name="Address" placeholder="Address"/>
+                <input type="text" name="phone_number" placeholder="contact"/>
+
+                <button class="showbutton">Sign Up</button>
+            </form>
+        </div>
+        <div class="form-container sign-in-container">
+            <form action="{% url 'Login'  %}" method="post">
+                {% csrf_token %}
+                <h1 class="showcreateA">Sign in</h1>
+                <div class="social-container">
+                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <span>or use your account</span>
+                <input name="username" placeholder="Email"/>
+                <input name="pass" placeholder="Password"/>
+
+                <button id="ssignin" class="showbutton">Sign In</button>
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1 class="showcreateA">Welcome Back!</h1>
+                    <p>To keep connected with us please login with your personal info</p>
+                    <button class="ghost" id="signIn">Sign In</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1 class="showcreateA">Hello, Friend!</h1>
+                    <p>Enter your personal details and start journey with us</p>
+                    <button class="ghost" id="signUp">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>
+            Created with <i class="fa fa-heart"></i> by
+            <a target="_blank" href="https://florin-pop.com">Florin Pop</a>
+            - Read how I created this and how you can join the challenge
+            <a target="_blank"
+               href="https://www.florin-pop.com/blog/2019/03/double-slider-sign-in-up-form/">here</a>.
+        </p>
+    </footer>
+
+</div>
+
+
+<script>
+
+    const signUpButton = document.getElementById('signUp');
+const signInButton = document.getElementById('signIn');
+const container = document.getElementById('container');
+
+signUpButton.addEventListener('click', () => {
+	container.classList.add("right-panel-active");
+});
+
+signInButton.addEventListener('click', () => {
+	container.classList.remove("right-panel-active");
+});
+
+
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+
+
+
+</script>
+
+
+{% endblock content %}
+
+{% block buttons %}
+
+
+{% if request.session.senderid %}
+<a href="service">
+    <button class="button1 button1"> Dashboard</button>
+</a>
+{% elif request.session.customerid %}
+
+
+
+<a href="Logout">
+    <button class="button1 button1" align> Logout </button>
+</a>
+
+
+<form action="{% url 'bookmyservice' %}" method="post">
+    {% csrf_token %}
+    <button class="button2 button2" align>My services</button>
+</form>
+
+{% else %}
+<a href="service">
+    <button class="button1 button1" align>Login</button>
+</a>
+{% endif %}
+<a href="register">
+
+</a>
+
+{% endblock buttons %}
+

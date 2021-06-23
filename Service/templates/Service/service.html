@@ -1,0 +1,217 @@
+{% include 'Service/Base.html' %}
+
+{% block content %}
+{% include 'Service/user.html' %}
+{% block main %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+.center {
+    margin: auto;
+    margin-left: 278px;
+    height: 924px;
+    margin-top: 1px;
+    width: 75%;
+<!--    border: 3px solid #73AD21;-->
+    padding: 10px;
+}
+.Links {
+    font-size: 30px;
+    color: white;
+    margin-left: 1269px;
+    margin-top: -95px;
+    text-decoration: none;
+}
+.innerbox {
+    margin: auto;
+    height: 904px;
+    width: 99%;
+    margin-top: -9px;
+<!--    border: 3px solid #73AD21;-->
+    padding: 10px;
+}
+
+
+
+P{
+}
+.total_s {
+    /* margin: auto; */
+    height: 72px;
+    margin-top: -73px;
+    margin-left: 1017px;
+    width: 11%;
+    border: 3px solid #026466;
+    padding: 10px;
+}
+
+
+.duration {
+    margin-left: 1210px;
+    margin-top: -101px;
+    height: 73px;
+    width: 12%;
+    border: 3px solid #026466;
+    padding: 10px;
+}
+
+.head1 {
+    font-size: 20px;
+    margin-left: 17px;
+    margin-top: -6px;
+}
+.table{
+  margin-top:50px;
+}
+
+.head2 {
+    font-size: 25px;
+    text-align:center;
+
+}
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+}
+th {
+  text-align: left;
+}
+
+# -------------------cards------------------------
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+/* Style the counter cards */
+.card {
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+    padding: 21px 53px 22px;
+    text-align: unset;
+    margin: 15px;
+    /* margin-left: 139px; */
+    border-style: ridge;
+    border: 2px solid #026466;
+    border-radius: 13px;
+    background-color: #ffffff;
+}
+
+.accptRej:hover
+{
+
+     color:#026466;
+border-bottom: 2px solid #026466;
+<!--  box-shadow: 0 5px #666;-->
+<!--  transform: translateY(4px)-->
+}
+
+.accptRej {
+    text-decoration: none;
+    color: #026466;
+    font-size: 23px;
+    /* border: 2px solid #639b9c; */
+    border-radius: inherit;
+    padding: 5px;
+    /* margin-left: -1px; */
+}
+
+
+
+#-------------scroll------------
+
+</style>
+<body>
+
+<div class="center">
+    <div class="innerbox">
+        <h1> Request</h1>
+
+        <div class="total_s"><h1 class="head1"> Total Service </h1>
+            <h1 class="head2"> 2 </h1></div>
+        <div class="duration"><h1 class="head1"> Total Time </h1>
+            <h1 class="head2"> 4 Hrs 31 Min</h1></div>
+
+
+        <div class="row">
+            {% for show in post %}
+
+            <div class="column" onclick='alert("youClickedMe!");'>
+                <div class="card" >
+                     <form action="{% url 'service' %}" method="get">
+                         {% csrf_token %}
+                    <h3>{{ show.heading }}</h3>
+                    <p>description:-{{ show.description }}</p>
+                    <p>charge:-{{ show.fees }}</p>
+                    <p>Add :- {{ show.address }}</p>
+
+                         <button class="accptRej" type="submit">Edit</button>
+                          <button class="accptRej" type="submit">Delete</button>
+
+                    </form>
+
+                </div>
+            </div>
+             {% endfor %}
+        </div>
+
+
+
+
+    </div>
+</div>
+
+<a href="{% url 'Home' %}">
+    <button class="button1 button1" align>Logout</button>
+</a>
+
+
+</body>
+</html>
+{% endblock main %}
+
+
+{% endblock content %}
+
+<!-- {% block buttons %}-->
+<!--   <a href="{% url 'Home' %}"><button class="button1 button1" align>Logout</button>&nbsp;&nbsp;</a>-->
+
+
+<!--{% endblock buttons %}-->

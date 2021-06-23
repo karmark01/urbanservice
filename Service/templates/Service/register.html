@@ -1,0 +1,456 @@
+ {% extends 'Service/Base.html' %}
+{% block content %}
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Sign Up Form by Colorlib</title>
+
+<link rel="stylesheet" href="{% static 'fonts/material-icon/css/material-design-iconic-font.min.css' %}">
+<link rel="stylesheet" href="{% static 'vendor/nouislider/nouislider.min.css' %}">
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<meta name="robots" content="noindex, follow">
+<style>
+.head {
+    background-color: #3d3b40;
+    padding: 20px;
+    height: 60px;
+}
+
+
+ body {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #222;
+    font-weight: 500;
+    font-family: poppins;
+    margin: 0;
+    background:white;
+    padding: 2px 0;
+}
+
+img {
+    max-width: 207%;
+    margin-top: 41px;
+    margin-left: 124px;
+    height: 697px;
+}
+.Links {
+    font-size: 30px;
+    color: white;
+    margin-left: 1130px;
+    margin-top: -152px;
+    text-decoration: none;
+}
+.vl {
+    border-left: 1px solid white;
+    height: 34px;
+    margin-top: -92px;
+    margin-left: 427px;
+}
+<!--header {-->
+<!--    background-color: #026466;-->
+<!--    padding: 10px;-->
+<!--}-->
+
+<!--p {-->
+<!--    font-weight: 600;-->
+<!--    color: #fff;-->
+<!--}-->
+
+<!--p {-->
+<!--    position: absolute;-->
+<!--    top: 19px;-->
+<!--    left: 70px;-->
+<!--    font-size: 25px;-->
+
+<!--}-->
+
+<!--.button2 button2 {-->
+<!--    background-color: #026466;-->
+<!--    border-radius: 22px;-->
+<!--    border: none;-->
+<!--    color: white;-->
+<!--    padding: 20px 32px;-->
+<!--    text-align: center;-->
+<!--    text-decoration: none;-->
+<!--    display: inline-block;-->
+<!--    font-size: 19px;-->
+<!--    margin: 4px 2px;-->
+<!--    transition-duration: 0.4s;-->
+<!--    cursor: pointer;-->
+<!--    top: 40px;-->
+<!--    right: 150px;-->
+<!--    position: absolute;-->
+<!--}-->
+.button2 {
+    background-color:#3d3b40;
+    border-radius: 22px;
+    border: none;
+    color: white;
+    padding: 20px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    top: 19px;
+    right: 150px;
+    position: absolute;
+}
+.button1 {
+    background-color: #3d3b40;
+    border-radius: 22px;
+    border: none;
+    color: white;
+    padding: 20px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 2px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    top: 17px;
+    right: 30px;
+    position: absolute;
+}
+.back {
+    font-size: 60px;
+    color: #3d3b40;
+    margin-top: -115px;
+}
+.custom-select {
+    position: relative;
+    font-family: Arial;
+    margin-left: 348px;
+    top: -35px;
+}
+
+
+.custom-select select {
+  display: none; /*hide original SELECT element:*/
+}
+
+.select-selected {
+  background-color: DodgerBlue;
+}
+
+/*style the arrow inside the select element:*/
+.select-selected:after {
+    position: absolute;
+    content: "";
+    top: 14px;
+    right: -35px;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-color: #fff transparent transparent transparent;
+}
+
+/*point the arrow upwards when the select box is open (active):*/
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
+
+/*style the items (options), including the selected item:*/
+.select-items div,.select-selected {
+  color: #ffffff;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+  user-select: none;
+}
+
+/*style items (options):*/
+.select-items {
+  position: absolute;
+  background-color: DodgerBlue;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+/*hide the items when the select box is closed:*/
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover, .same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+</style>
+
+ <script>
+
+     function validate()
+     {
+         var fname = document.getElementById("fname");
+         var lname = document.getElementById("lname");
+         var addr  = document.getElementById("addr");
+         var pnub  = document.getElementById("pnub");
+         var email  = document.getElementById("email");
+         var pass  = document.getElementById("pass") ;
+         var rpass  = document.getElementById("rpass");
+
+
+         var pnub_regx = /^[6-9]\d{9}$/ ;
+         var addr_regx = /^[a-zA-Z0-9\s,.'-]{3,200}$/ ;
+         var name_regx = /^[a-zA-Z]{2,100}$/ ;
+<!--         var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;-->
+
+       if (!name_regx.test(fname.value))
+       {
+
+          fname.style.border = "solid 1px red";
+          return false;
+       }
+        else if(!name_regx.test(lname.value))
+       {
+          lname.style.border = "solid 1px red";
+          return false;
+       }
+
+       else if (!addr_regx.test(addr.value))
+       {
+          addr.style.border = "solid 1px red";
+          return false;
+       }
+
+       else if(!pnub_regx.test(pnub.value))
+       {
+          pnub.style.border = "solid 1px red";
+          return false;
+       }
+       else if(email.value.trim() == "")
+       {
+          email.style.border = "solid 1px red";
+          return false;
+       }
+
+       else if(pass.value.trim().length <5)
+       {
+           pass.style.border = "solid 1px red";
+          return false;
+       }
+
+       else if( rpass.value.trim()<5 )
+       {
+            rpass.style.border = "solid 1px red" ;
+          return false;
+
+       }
+       else if(pass.value.trim() !=  rpass.value.trim())
+       {
+          document.getElementById("retype").style.visibility="visible";
+          return false ;
+       }
+
+       else
+       {
+         return true ;
+       }
+     }
+
+
+ </script>
+
+
+
+</head>
+<body>
+
+<div class="back"><a style='font-size: 60px; color: white;
+    margin-top: -115px;' href="{% url 'Home' %}">❰</a></div>
+<div class="main">
+<div class="container">
+<div class="signup-content">
+<div class="signup-img">
+<img src="{% static 'images/form-img.jpg' %}" alt="">
+<div class="signup-img-content">
+<h2>Register now </h2>
+<p>while seats are available !</p>
+</div>
+</div>
+<div class="signup-form">
+<form onsubmit="return validate()" method="POST" class="register-form" id="register-form">
+    {% csrf_token %}
+<div class="form-row">
+<div class="form-group">
+<div class="form-input">
+<label   for="first_name" class="required">First name</label>
+<input id="fname" type="text" name="first_name" id="first_name" />
+</div>
+<div class="form-input">
+<label  for="last_name" class="required">Last name</label>
+<input id="lname" type="text" name="last_name" id="last_name" />
+</div>
+
+
+<div class="form-input">
+<label for="chequeno">Address</label>
+<input id="addr" type="text" name="Address" id="chequeno" />
+</div>
+
+
+
+<div class="form-input">
+<label for="phone_number" class="required">Phone number</label>
+<input id="pnub" type="text" name="phone_number" id="phone_number" />
+</div>
+
+
+
+<!--surround the select box with a "custom-select" DIV element. Remember to set the width:-->
+<label class="required">Category</label>
+
+    <div class="custom-select" style="width:200px;">
+  <select name="dropdown">
+    <option value="0">Select car:</option>
+    {% for choice in cat %}
+    <option value="{{choice.cname}}">{{choice.cname}}</option>
+
+      {% endfor %}
+
+  </select>
+</div>
+
+
+
+
+<div class="form-input">
+<label for="email" class="required">Email</label>
+<input id="email" type="text" name="email" id="email" />
+</div>
+
+<div class="form-input">
+<label for="Pass">Password</label>
+<input type="text" id="pass" name="Pass" id="blank_name" />
+</div>
+
+<div class="form-input">
+<label for="rpass">Re-type Password</label>
+<input id="rpass" type="text" name="rpass" id="payable" />
+    <label id="retype" style="color:red; visibility:hidden; "> Password Not matching </label>
+</div>
+</div>
+</div>
+
+<div class="form-submit">
+<input type="submit" value="Submit" class="submit"  name="submit" />
+</div>
+
+</form>
+</div>
+</div>
+</div>
+</div>
+
+<script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'vendor/nouislider/nouislider.min.js' %}"></script>
+<script src="{% static 'vendor/wnumb/wNumb.js' %}"></script>
+<script src="{% static 'vendor/jquery-validation/dist/jquery.validate.min.js' %}"></script>
+<script src="{% static 'vendor/jquery-validation/dist/additional-methods.min.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script>
+var x, i, j, l, ll, selElmnt, a, b, c;
+/*look for any elements with the class "custom-select":*/
+x = document.getElementsByClassName("custom-select");
+l = x.length;
+for (i = 0; i < l; i++) {
+  selElmnt = x[i].getElementsByTagName("select")[0];
+  ll = selElmnt.length;
+  /*for each element, create a new DIV that will act as the selected item:*/
+  a = document.createElement("DIV");
+  a.setAttribute("class", "select-selected");
+  a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+  x[i].appendChild(a);
+  /*for each element, create a new DIV that will contain the option list:*/
+  b = document.createElement("DIV");
+  b.setAttribute("class", "select-items select-hide");
+  for (j = 1; j < ll; j++) {
+    /*for each option in the original select element,
+    create a new DIV that will act as an option item:*/
+    c = document.createElement("DIV");
+    c.innerHTML = selElmnt.options[j].innerHTML;
+    c.addEventListener("click", function(e) {
+        /*when an item is clicked, update the original select box,
+        and the selected item:*/
+        var y, i, k, s, h, sl, yl;
+        s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+        sl = s.length;
+        h = this.parentNode.previousSibling;
+        for (i = 0; i < sl; i++) {
+          if (s.options[i].innerHTML == this.innerHTML) {
+            s.selectedIndex = i;
+            h.innerHTML = this.innerHTML;
+            y = this.parentNode.getElementsByClassName("same-as-selected");
+            yl = y.length;
+            for (k = 0; k < yl; k++) {
+              y[k].removeAttribute("class");
+            }
+            this.setAttribute("class", "same-as-selected");
+            break;
+          }
+        }
+        h.click();
+    });
+    b.appendChild(c);
+  }
+  x[i].appendChild(b);
+  a.addEventListener("click", function(e) {
+      /*when the select box is clicked, close any other select boxes,
+      and open/close the current select box:*/
+      e.stopPropagation();
+      closeAllSelect(this);
+      this.nextSibling.classList.toggle("select-hide");
+      this.classList.toggle("select-arrow-active");
+    });
+}
+function closeAllSelect(elmnt) {
+  /*a function that will close all select boxes in the document,
+  except the current select box:*/
+  var x, y, i, xl, yl, arrNo = [];
+  x = document.getElementsByClassName("select-items");
+  y = document.getElementsByClassName("select-selected");
+  xl = x.length;
+  yl = y.length;
+  for (i = 0; i < yl; i++) {
+    if (elmnt == y[i]) {
+      arrNo.push(i)
+    } else {
+      y[i].classList.remove("select-arrow-active");
+    }
+  }
+  for (i = 0; i < xl; i++) {
+    if (arrNo.indexOf(i)) {
+      x[i].classList.add("select-hide");
+    }
+  }
+}
+/*if the user clicks anywhere outside the select box,
+then close all select boxes:*/
+document.addEventListener("click", closeAllSelect);
+</script>
+
+</body>
+</html>      ,
+    {% block buttons %}
+   <a href="{% url 'Login' %}"><button class="button1 button1" align>Login</button>&nbsp;&nbsp;</a>
+   <button class="button2 button2" onclick="goBack()">Go Back</button>
+
+{% endblock buttons %}
+
+{% endblock content %}

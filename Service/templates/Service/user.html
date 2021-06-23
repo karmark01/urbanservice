@@ -1,0 +1,99 @@
+{% block sidebar %}
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+body {
+  font-family: "Lato", sans-serif;
+     background-color: white;
+}
+
+h1.name{
+text-align: center;
+  color: white;
+
+}
+.sidenav {
+    width: 261px;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+    top: 99px;
+    left: 12px;
+    background: #3d3b40;
+    overflow-x: hidden;
+    padding: 8px 0;
+}
+
+
+.arrow:before{
+content: ' \003E';
+position:absolute;
+left: 229px;
+}
+
+
+
+.sidenav a {
+ padding: 10px 21px 2px 49px;
+    text-decoration: none;
+    font-size: 25px;
+    display: block;
+    color: white;
+<!--    border-top-style: solid;-->
+<!--    border-top-width: thin;-->
+}
+
+.sidenav a:hover {
+  background-color: white;
+ border-top-left-radius:50px;
+ border-bottom-left-radius:50px;
+ margin-left:20px;
+  color: black;
+}
+
+.main {
+  margin-left: 440px; /* Same width as the sidebar + left position in px */
+  font-size: 28px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+</head>
+<body>
+
+
+<div class="lower" >
+
+<div class="sidenav">
+
+    <h1 class="name"> MY ACCOUNT </h1>
+
+    <a href="{% url 'postservice' %}" class="arrow">Post Service</a>
+    <form action="{% url 'service' %}" method="post">
+  <a  href="{% url 'service' %}" class="arrow">Services</a>
+        </form>
+  <a href="{% url 'Aheadservice' %}" class="arrow">Requested Service</a>
+        <a class="arrow" href="{% url 'profile' %}">Profile</a>
+  <a href="#contact" class="arrow">Contact</a></td>
+     <a href="#contact"> </a></td>
+
+
+</div>
+
+{% block main %}
+<div class="main">
+</div>
+{% endblock main %}
+    </div>
+
+</body>
+</html>
+   {% endblock sidebar %}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex">
+    <title>Oservice</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+<script src="{% static 'js/home.js' %}"></script>
+
+</head>
+{%   block link %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock link %}
+
+<body>
+
+<div class="head">
+    <i class="fas fa-shuttle-van"></i>
+    <h1 class="Cname"  align="justify">OService</h1>
+    <div class="Links" >
+
+        {% block links %}
+                                                                     
+        {% endblock links %}
+
+        <div class="vl"></div>
+    </div>
+</div>
+{% block buttons %}
+<!--   <a href="Login"><button class="button1 button1" align>Login</button></a>-->
+<!-- <a href="register"><button class="button2 button2">Register</button></a>-->
+
+{% endblock buttons %}
+
+{% block content %}
+{% endblock content %}
+
+</body>
+</html>

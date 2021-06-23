@@ -1,0 +1,163 @@
+
+ {% include 'Service/Base.html' %}
+
+{% block content %}
+{% include 'Service/user.html' %}
+{% block main %}
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+<style>
+.center {
+    margin: auto;
+    height: 924px;
+    width: 60%;
+    margin-top: 102px;
+<!--    border: 3px solid #73AD21;-->
+    padding: 10px;
+}
+.innerbox {
+    margin: auto;
+    margin-left: 223px;
+    margin-top: 36px;
+    height: 654px;
+    width: 61%;
+    border: 3px solid #3d3b40;
+    /* border-radius: 43px; */
+    padding: 10px;
+}
+.leftinnerbox {
+    margin: auto;
+    margin-left: -8px;
+    margin-top: -11px;
+    height: 71px;
+    width: 99%;
+<!--    border: 3px solid #73AD21;-->
+    padding: 10px;
+        text-align: center;
+}
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type=password], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+img {
+    left: 75px;
+    width: 235px;
+    padding: 40p x;
+    height: 217px;
+    border-radius: 11%;
+    /* border-color: black; */
+    border: 20px solid transparent;
+}
+
+.Links {
+    font-size: 30px;
+    color: white;
+    margin-left: 1275px;
+    margin-top: -95px;
+    text-decoration: none;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: rgb(61 59 64);
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+</style>
+</head>
+<body>
+
+
+<div class="center">
+
+
+ <div class="innerbox">
+         <div class="leftinnerbox">
+              <h1> Post service</h1>
+
+ </div>
+        <form   action="{% url 'postservice'  %}" method="post">
+
+            {% csrf_token %}
+
+          <label for="fname">Service Heading:</label>
+          <input type="text" id="fname" name="sname" ><br>
+
+
+            <label for="fname">Service Description :</label>
+          <input type="text" id="fname" name="SerDescription" ><br>
+
+
+            <label for="fname">Charge :</label>
+          <input type="text" id="fname" name="Fees" ><br>
+
+
+          <label for="fname">Phone NO:</label>
+          <input type="text" id="fname" name="pnum" ><br>
+
+
+            <label for="lname">Address</label>
+          <input type="text" id="lname" name="address" ><br><br>
+
+
+              <label for="birthday">DATE</label>
+             <input type="date" id="birthday" name="date">
+
+<!--           <label for="lname">Location</label>-->
+<!--          <button onclick="getLocation()">Get Location</button>-->
+
+           <p id="demo"></p>
+
+
+
+
+<!--            <label for="pwd">Existing Password:</label>-->
+<!--          <input type="password" id="pwd" name="pwd" minlength="8"><br><br>-->
+
+<!--         <label for="pwd"> New Password:</label>-->
+<!--           <input type="password" id="pwd" name="pwd" minlength="8"><br><br>-->
+
+<!--         <label for="pwd">Confirm Password:</label>-->
+<!--           <input type="password" id="pwd" name="pwd" minlength="8"><br><br>-->
+
+         <input type="submit" value="Submit">
+        </form>
+  </div>
+</div>
+
+</body>
+</html>
+
+{% endblock main %}
+
+
+{% endblock content %}
+
+<!-- {% block buttons %}-->
+<!--   <a href="{% url 'Home' %}"><button class="button1 button1" align>Logout</button>&nbsp;&nbsp;</a>-->
+
+
+<!--{% endblock buttons %}-->
